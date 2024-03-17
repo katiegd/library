@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Library</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <img src="./images/library-svgrepo-com.svg" />Library
+      </div>
+
+      <div id="content">
+        <div class="sidebar">
+          <div class="item">Title:<input type="text" class="title" /></div>
+          <div class="item">Author:<input type="text" class="author" /></div>
+          <div class="item">Pages:<input type="text" class="pages" /></div>
+          <div class="item">Read?:<input type="checkbox" class="read" /></div>
+          <div class="addBtn"><button id="add">add book</button></div>
+        </div>
+        <div class="book">
+          <p>Title: Game of Thrones</p>
+          <p>Author: George R.R. Martin</p>
+          <p>Pages: 562</p>
+          <p>Have you read? <input type="checkbox" /></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
