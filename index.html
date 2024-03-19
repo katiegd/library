@@ -4,30 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Library</title>
-    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="container">
-      <div id="header">
-        <img src="./images/library-svgrepo-com.svg" />Library
-      </div>
+      <div id="header">Library</div>
 
       <div id="content">
         <div class="sidebar">
-          <div class="item">Title:<input type="text" class="title" /></div>
-          <div class="item">Author:<input type="text" class="author" /></div>
-          <div class="item">Pages:<input type="text" class="pages" /></div>
-          <div class="item">Read?:<input type="checkbox" class="read" /></div>
-          <div class="addBtn"><button id="add">add book</button></div>
+          <div class="addBtn">
+            <button id="add-book">add book</button>
+          </div>
+          <form id="new-book-form" style="display: none">
+            <div class="item">
+              <label for="title">Title:</label
+              ><input type="text" class="title" />
+            </div>
+            <div class="item">
+              <label for="author">Author:</label
+              ><input type="text" class="author" />
+            </div>
+            <div class="item">
+              <label for="pages">Pages:</label
+              ><input type="text" class="pages" />
+            </div>
+            <div class="item">
+              <label for="read">Read?:</label
+              ><input type="checkbox" class="read" />
+            </div>
+            <div class="submit-btn">
+              <button type="submit">+</button>
+            </div>
+          </form>
         </div>
-        <div class="book">
-          <p>Title: Game of Thrones</p>
-          <p>Author: George R.R. Martin</p>
-          <p>Pages: 562</p>
-          <p>Have you read? <input type="checkbox" /></p>
+        <div class="library">
+          <div class="book">
+            <p>Title: ${book.title}</p>
+            <p>Author: ${book.author}</p>
+            <p>Pages: ${book.pages}</p>
+            <p>Have you read? ${book.read ? "Yes " : "Not Yet"}</p>
+            <input
+              type="checkbox"
+              id="switch"
+              onclick="toggleRead(${i})"
+            /><label for="switch">Toggle</label>
+            <div class="remove">
+              <img
+                class="remove-btn"
+                src="./images/remove.svg"
+                height="40px"
+                width="40px"
+                onclick="removeBook(${i})"
+              />
+            </div>
+          </div>
         </div>
       </div>
+      <script src="./script.js"></script>
     </div>
   </body>
 </html>

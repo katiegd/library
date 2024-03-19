@@ -1,23 +1,38 @@
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  font-weight: 100;
   margin: 0;
   padding: 0;
 }
 
+:root {
+  --primary-color: #274c77;
+  --accent-color: #6096ba;
+  --background-color: #fefefe;
+  --big-font-color: #fefefe;
+  --font-color: #fefefe;
+}
+
+h4 {
+  font-weight: 800;
+}
+
 button {
   font-size: 1rem;
-  color: #7469b6;
+  font-weight: 1000;
+  color: var(--font-color);
   padding: 20px;
   border-radius: 30px;
   width: 100%;
   border: none;
-  background-color: #e1afd1;
+  background-color: var(--primary-color);
   transition: 0.2s ease;
 }
 
 button:hover {
-  color: #e1afd1;
-  background-color: #ad88c6;
+  color: var(--primary-color);
+  background-color: var(--background-color);
   cursor: pointer;
   transform: translate(1px 1px);
 }
@@ -29,29 +44,57 @@ button:hover {
 
 #header {
   font-size: 4rem;
-  color: #e1afd1;
+  font-weight: 800;
+  color: var(--big-font-color);
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   align-items: center;
   padding: 50px;
-  background-color: hsl(249, 35%, 36%);
-  box-shadow: 1px 1px 15px #000;
+  background-color: var(--primary-color);
 }
 
 #content {
-  height: 100dvh;
-  background-color: hsl(249, 35%, 66%);
+  background-color: var(--background-color);
   display: grid;
   grid-template-columns: 250px 1fr;
 }
 
 .sidebar {
-  background-color: hsl(249, 35%, 26%);
-  color: #e1afd1;
+  height: 100vh;
+  grid-area: 1 / 1 / 5 / 2;
+  background-color: var(--accent-color);
+  color: var(--font-color);
   padding: 30px;
 }
 
+.library {
+  grid-area: 1 / 2 / 5 / 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  overflow: auto;
+}
+
+.book-line {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  gap: 10px;
+}
+
+.remove {
+  position: absolute;
+  translate: 200px 125px;
+  z-index: 1;
+  filter: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.8));
+}
+
+.remove-btn:hover {
+  cursor: pointer;
+}
+
 .item {
+  font-weight: 600;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -61,30 +104,44 @@ button:hover {
 input[type="text"] {
   height: 2rem;
   border: 0;
-  background-color: #e1afd1;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--background-color);
   width: 100%;
   margin: 5px 0 0 0;
 }
 
 input[type="checkbox"] {
   height: 2rem;
-  border: 0;
-  background-color: #e1afd1;
   width: 1rem;
   margin: 0 0 0 15px;
+}
+
+button[type="submit"] {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: end;
 }
 
 .book {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  width: 200px;
+  height: 200px;
   font-size: 1rem;
   padding: 20px;
   line-height: 1.5rem;
-  background-color: hsl(249, 35%, 26%);
-  color: #e1afd1;
+  background-color: var(--primary-color);
+  color: var(--font-color);
   border-radius: 20px;
-  width: 200px;
-  height: 200px;
   margin: 30px;
 }
 
@@ -92,4 +149,15 @@ p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.toggle-read-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-color);
+  padding: 5px;
+  width: 75px;
+  height: 25px;
+  margin-left: 5px;
 }
