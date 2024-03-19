@@ -21,7 +21,6 @@ Book.prototype.toggleRead = function () {
 
 function toggleRead(index) {
   myLibrary[index].toggleRead();
-  myLibrary.classList.add("read");
   renderHTML();
 }
 

@@ -37,28 +37,7 @@
             </div>
           </form>
         </div>
-        <div class="library">
-          <div class="book">
-            <p>Title: ${book.title}</p>
-            <p>Author: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <p>Have you read? ${book.read ? "Yes " : "Not Yet"}</p>
-            <input
-              type="checkbox"
-              id="switch"
-              onclick="toggleRead(${i})"
-            /><label for="switch">Toggle</label>
-            <div class="remove">
-              <img
-                class="remove-btn"
-                src="./images/remove.svg"
-                height="40px"
-                width="40px"
-                onclick="removeBook(${i})"
-              />
-            </div>
-          </div>
-        </div>
+        <div class="library"></div>
       </div>
       <script src="./script.js"></script>
     </div>

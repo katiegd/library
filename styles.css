@@ -83,10 +83,9 @@ button:hover {
 }
 
 .remove {
-  position: absolute;
-  translate: 200px 125px;
+  position: relative;
+  translate: 185px -173px;
   z-index: 1;
-  filter: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.8));
 }
 
 .remove-btn:hover {
@@ -103,6 +102,7 @@ button:hover {
 
 input[type="text"] {
   height: 2rem;
+  font-weight: 800;
   border: 0;
   border-radius: 10px;
   padding: 5px;
@@ -141,6 +141,8 @@ button[type="submit"] {
   line-height: 1.5rem;
   background-color: var(--primary-color);
   color: var(--font-color);
+  border: 3px solid var(--font-color);
+  filter: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.8));
   border-radius: 20px;
   margin: 30px;
 }
